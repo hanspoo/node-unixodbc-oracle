@@ -8,6 +8,7 @@ cd node-unixodbc-oracle
 ## Start Oracle Server
 
 ```
+cd dev-server
 docker compose up
 ```
 
@@ -21,14 +22,20 @@ docker build --no-cache -t torpedo:1.0 -f Dockerfile.odbc .
 ## Execute the node app
 
 ```
-docker run -it --rm torpedo:1.0
+docker run -p 3000:3000 --rm torpedo:1.0
+```
+
+## Access the REST API
+
+```
+curl localhost:3000/employees
 ```
 
 ---
 
 ## 📘 Overview
 
-The goal of this project is to build a **Docker image** capable of running a **nodejs** application that connects to an **Oracle Database** using **unixODBC** as the communication layer.
+The goal of this project is to build a **Docker image** capable of running a **nodejs** web app that connects to an **Oracle Database** using **unixODBC** as the communication layer.
 
 This setup allows the Node application (running on Express) to query the Oracle server directly within a containerized environment.
 
