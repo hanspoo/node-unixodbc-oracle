@@ -21,5 +21,5 @@ docker build --no-cache -t torpedo:1.0 -f Dockerfile.odbc .
 ## Execute the node app
 
 ```
-docker run -it --rm torpedo:1.3
+docker run -it --rm torpedo:1.0
 ```
