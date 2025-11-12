@@ -1,12 +1,17 @@
 {
-  "name": "oracle-unixodbc",
+  "name": "node-unixodbc-oracle",
   "version": "1.0.0",
   "description": "Oracle server and unix odbc app running in docker",
-  "main": "odbc_sample.js",  
+  "main": "odbc_sample.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["oracle","unixodbc","node","odbc"],
+  "keywords": [
+    "oracle",
+    "unixodbc",
+    "node",
+    "odbc"
+  ],
   "author": "Hans Poo",
   "license": "ISC",
   "dependencies": {

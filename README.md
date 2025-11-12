@@ -1,7 +1,7 @@
 # POC node unixodbc with oracle
 
-git clone xxx
-cd xxx
+git clone https://github.com/hanspoo/node-unixodbc-oracle
+cd node-unixodbc-oracle
 
 ## Start Oracle Server
 
