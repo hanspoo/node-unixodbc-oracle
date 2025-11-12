@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "keywords": [
     "oracle",
     "unixodbc",
@@ -15,6 +16,7 @@
   "author": "Hans Poo",
   "license": "ISC",
   "dependencies": {
+    "express": "^5.1.0",
     "odbc": "^2.4.9"
   }
 }

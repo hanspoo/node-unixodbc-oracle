@@ -4,7 +4,8 @@ FROM torpedo-base:latest
 COPY instantclient-odbc-linux.x64-21.20.0.0.0dbru.zip /
 RUN unzip instantclient-odbc-linux.x64-21.20.0.0.0dbru.zip
 RUN cp instantclient_21_20/libsqora.so.21.1 /usr/lib/oracle/21/client64/lib
-COPY package.json odbc_sample.js /
+COPY package.json src/odbc_sample.js /
+COPY odbc.ini /etc/odbc.ini
 RUN npm install
 CMD ["node", "odbc_sample.js"]
 

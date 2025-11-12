@@ -5,7 +5,7 @@ FROM ghcr.io/oracle/oraclelinux8-instantclient:21
 # RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 #     echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 COPY odbcinst.ini /etc/odbcinst.ini
-COPY odbc.ini /etc/odbc.ini
+
 
 # Install Node.js on top of Oracle Instant Client
 RUN dnf module reset nodejs && \

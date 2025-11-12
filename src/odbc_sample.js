@@ -5,7 +5,7 @@ const odbc = require("odbc");
 async function main() {
   try {
     // Example DSN (configured in /etc/odbc.ini)
-    const connectionString = "DSN=FREEPDB1;UID=sample_user;PWD=Sample123;";
+    const connectionString = "DSN=FREEPDB1;";
 
     const connection = await odbc.connect(connectionString);
     console.log("✅ Connected to database!");
