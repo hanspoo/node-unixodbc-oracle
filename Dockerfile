@@ -1,8 +1,8 @@
 FROM ghcr.io/oracle/oraclelinux8-instantclient:21
 
 RUN dnf module reset nodejs && \
-    dnf module enable nodejs:20 -y && \
-    dnf install -y nodejs unzip
+    dnf module enable nodejs:22 -y && \
+    dnf install -y nodejs unzip npm
 
 RUN dnf install -y unixODBC unixODBC-devel
 
