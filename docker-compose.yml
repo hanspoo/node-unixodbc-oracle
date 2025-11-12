@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-free:latest
+    container_name: oracle-sample
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: "Welcome123" # SYS/SYSTEM password
+      APP_USER: "sample_user" # Application/schema user
+      APP_USER_PASSWORD: "Sample123" # Application user password
+    volumes:
+      - oracle_data:/opt/oracle/oradata # Persist database files
+      - ./init-scripts:/container-entrypoint-initdb.d # Run custom SQL scripts
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'tnslsnr' > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+    restart: unless-stopped
+  # torpedo:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: torpedo-container
+  #   depends_on:
+  #     oracle-db:
+  #       condition: service_healthy
+  #   environment:
+  #     ORACLE_HOST: oracle-db
+  #     ORACLE_PORT: 1521
+  #     ORACLE_SID: ORCLCDB
+  #     ORACLE_USER: sample_user
+  #     ORACLE_PASSWORD: Sample123
+  #   restart: unless-stopped
+volumes:
+  oracle_data:
